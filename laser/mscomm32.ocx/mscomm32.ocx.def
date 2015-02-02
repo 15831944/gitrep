@@ -1,0 +1,9 @@
+; mscomm32.ocx.def : 定义模块参数。
+
+LIBRARY      "mscomm32.ocx.OCX"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer PRIVATE

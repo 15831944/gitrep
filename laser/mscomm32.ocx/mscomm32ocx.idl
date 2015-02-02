@@ -1,0 +1,52 @@
+// mscomm32ocx.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(mscomm32ocx.tlb)，该类型库将成为
+// mscomm32.ocx.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(215AB02D-187D-450C-9BF8-42DB62F70F66), version(1.0),
+  helpfile("mscomm32.ocx.hlp"),
+  helpstring("mscomm32.ocx ActiveX 控件模块"),
+  control ]
+library mscomm32ocxLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Cmscomm32ocxCtrl 的主调度接口
+
+	[ uuid(3A9DD7C3-E510-441D-9598-1AD7E07F80CD),
+	  helpstring("mscomm32ocx Control 的调度接口")]
+	dispinterface _Dmscomm32ocx
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Cmscomm32ocxCtrl 的事件调度接口
+
+	[ uuid(822182DD-AC76-4E15-97D4-715E7633D921),
+	  helpstring("mscomm32ocx Control 的事件接口") ]
+	dispinterface _Dmscomm32ocxEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  Cmscomm32ocxCtrl 的类信息
+
+	[ uuid(7699C356-F53E-49AC-97CF-A4EA36888773),
+	  helpstring("mscomm32ocx Control"), control ]
+	coclass mscomm32ocx
+	{
+		[default] dispinterface _Dmscomm32ocx;
+		[default, source] dispinterface _Dmscomm32ocxEvents;
+	};
+
+};
